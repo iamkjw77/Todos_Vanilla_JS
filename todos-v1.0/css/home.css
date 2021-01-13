@@ -78,7 +78,7 @@
   background: #50565d;
 }
 
-.todo__todos-list span {
+.todo__todos-list label {
   margin: 0 15px;
 }
 
