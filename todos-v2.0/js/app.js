@@ -1,10 +1,11 @@
 // 날짜
 const $day = document.querySelector('.date__day');
 const $date = document.querySelector('.date__date');
-const dayArr = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
+const week = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+const today = new Date();
 
-$day.textContent = dayArr[new Date().getDay()];
-$date.textContent = new Date().toString().slice(4, 15);
+$day.textContent = week[today.getDay()];
+$date.textContent = today.toString().slice(4, 15);
 
 // 할 일 추가
 const $form = document.querySelector('.todo__form');
