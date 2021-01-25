@@ -83,14 +83,13 @@ const removeCompletedAll = () => {
 }
 
 const changeBtn = id => {
-  console.log(id);
   [...$btn_list.children].forEach($item => {
     $item.classList.toggle('active', $item.id === id);
   });
 
   btnState = id;
-  console.log(btnState);
-};
+  render();
+}
 
 // 이벤트
 document.addEventListener('DOMContentLoaded', fetchTodos);
@@ -122,9 +121,12 @@ $clear_done_btn.onclick = () => {
 }
 
 $btn_list.onclick = ({ target }) => {
-  if (target.classList.contains('todos-btn__list')) return;
+  // if (target.classList.contains('todos-btn__list')) return;
+  if (target === $btn_list) return;
   changeBtn(target.parentNode.id);
-  render();
+
+  // $btn_list.querySelector('.active').classList.remove('active');
+  // target.parentNode.classList.add('active');
 };
 
 // label 이벤트
